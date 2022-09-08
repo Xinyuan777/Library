@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+    <title>修改個人資料 @Session["UserID"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/EditProfile.css" />
+</head>
+
+<body>
+    <div id="VuePage">
+        <section>
+            <div class="container">
+                <h2>修改個人資料</h2>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <span class="text">帳號：</span><br /><br /><br /><p class="form-control-static">&emsp; &emsp; &emsp; {{form.UserID}}</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="text" name="" required="required" />
+                            <span class="text">密碼：</span><p class="form-control-static"> &emsp; &emsp; {{form.UserPwd}}</p>
+                        </div><br />
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="text" name="" class="form-control" v-model="form.UserName" required="required" />
+                            <span class="text">姓名</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="text" name="" class="form-control" v-model="form.UserEmail" required="required" />
+                            <span class="text">Email</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary" v-on:click="DoEditProfile()">修改個人資料</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>修改密碼</h2>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="password" name="" class="form-control" v-model="form.NewUserPwd" required="required" />
+                            <span class="text">修改密碼</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="password" name="" class="form-control" v-model="form.CheckUserPwd" required="required" />
+                            <span class="text">確認密碼</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary" v-on:click="DoEditPwd()">修改密碼</button>
+                </div>
+            </div>
+        </section>
+
+        <!--使用 Bootstrap Modal 樣式，當執行有錯誤時，顯示錯誤訊息-->
+        <div class="modal fade" id="ErrorAlert" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">錯誤訊息</h4>
+                    </div>
+                    <div class="modal-body" id="ErrorMsg" style="overflow-x:auto;width:100%;">
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+</body>
+</html>
+
+@section scripts {
+    <script>
+        var VuePage = new Vue({
+            el: '#VuePage'
+            , data: function () {
+                var data = {
+                    form: {}
+                };
+
+                // 設定表單初始值
+                data.form = {
+                    UserID: ""
+                    , UserName: ""
+                    , UserEmail:""
+                }
+                return data;
+            }
+            // Vue 實體與掛載完成
+            , mounted: function () {
+                var self = this;
+
+                // 當 Vue 掛載完成，取得個人資料
+                self.GetUserProfile();
+            }
+            , methods: {
+                // 前端驗證權杖
+                GetToken: function () {
+                    var token = '@Html.AntiForgeryToken()';
+                    token = $(token).val();
+                    return token;
+                }
+                // 取得個人資料
+                , GetUserProfile: function () {
+                    var self = this;
+                    var postData = {};
+
+                    // 使用 jQuery Ajax 傳送至後端
+                    $.ajax({
+                        url:'@Url.Content("~/Member/GetUserProfile")',
+                        method:'POST',
+                        dataType:'json',
+                        data: { inModel: postData },
+                        success: function (datas) {
+                            if (datas.ErrMsg) {
+                                alert(datas.ErrMsg);
+                                return;
+                            }
+                            self.form.UserID = datas.UserID;
+                            self.form.UserPwd = datas.UserPwd;
+                            self.form.UserName = datas.UserName;
+                            self.form.UserEmail = datas.UserEmail;
+                        },
+                        error: function (err) {
+                            $('#ErrorMsg').html(err.responseText);
+                            $('#ErrorAlert').modal('toggle');
+                        },
+                    });
+                }
+                // 修改個人資料
+                , DoEditProfile: function () {
+                    var self = this;
+
+                    // 組合表單資料
+                    var postData = {};
+                    postData['UserName'] = self.form.UserName;
+                    postData['UserEmail'] = self.form.UserEmail;
+
+                    // 使用 jQuery Ajax 傳送至後端
+                    $.ajax({
+                        url:'@Url.Content("~/Member/DoEditProfile")',
+                        method:'POST',
+                        dataType:'json',
+                        data: { inModel: postData, __RequestVerificationToken: self.GetToken() },
+                        success: function (datas) {
+                            if (datas.ErrMsg) {
+                                alert(datas.ErrMsg);
+                                return;
+                            }
+                            alert(datas.ResultMsg);
+                        },
+                        error: function (err) {
+                            $('#ErrorMsg').html(err.responseText);
+                            $('#ErrorAlert').modal('toggle');
+                        },
+                    });
+                }
+                 // 修改密碼
+                , DoEditPwd: function () {
+                    var self = this;
+
+                    // 組合表單資料
+                    var postData = {};
+                    postData['NewUserPwd'] = self.form.NewUserPwd;
+                    postData['CheckUserPwd'] = self.form.CheckUserPwd;
+
+                    // 使用 jQuery Ajax 傳送至後端
+                    $.ajax({
+                        url:'@Url.Content("~/Member/DoEditPwd")',
+                        method:'POST',
+                        dataType:'json',
+                        data: { inModel: postData, __RequestVerificationToken: self.GetToken() },
+                        success: function (datas) {
+                            if (datas.ErrMsg) {
+                                alert(datas.ErrMsg);
+                                return;
+                            }
+                            alert(datas.ResultMsg);
+                        },
+                        error: function (err) {
+                            $('#ErrorMsg').html(err.responseText);
+                            $('#ErrorAlert').modal('toggle');
+                        },
+                    });
+                }
+
+            }
+        })
+    </script>
+}

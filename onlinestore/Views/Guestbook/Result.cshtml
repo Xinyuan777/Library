@@ -1,0 +1,27 @@
+﻿@model onlinestore.Models.MessageData_Cs
+@{
+    Layout = null;
+}
+<!DOCTyPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <h2>儲存內容</h2>
+    <fieldset>
+        <legend>留言內容</legend>
+        <div class="display-label">姓名:@(Model.UserID_From_P)</div>
+        <div class="display-label">信箱:@(Model.Email_P)</div>
+        <div class="display-label">留言內容:@(Model.Content_P.ToString().Replace("\r\n","<br />\r\n"))</div>
+        <div class="display-label">是否需要專人聯繫:@(Model.IsSecret_P)</div>
+        <div class="display-label">留言時間: @(Model.JoinTime_P)</div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("儲存", "Index"))
+    </p>
+</body>
+</html>
+

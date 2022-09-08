@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="../../Content/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../../Content/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="../../Content/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100i,400,500,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+<body>
+    <!-- banner -->
+    <div class="inner-banner">
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
+                <h1>
+                    <a class="navbar-brand" href=@Url.Action("Index")>
+                        Library
+                        <span>Online Store</span>
+                    </a>
+                </h1>
+
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href=@Url.Action("Index")>
+                                首頁
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-xl-4 mx-lg-3 my-lg-0 my-3">
+                            <a class="nav-link" href=@Url.Action("About")>關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href=@Url.Action("Contact")>聯絡我們</a>
+                        </li>
+                        <li><a class="nav-link" href=@Url.Action("../Member/Register")>註冊</a></li>
+                        <li><a class="nav-link" href=@Url.Action("../Member/Login")>登入</a></li>
+                        <li> <a class="nav-link" href=@Url.Action("../Member/Editprofile")>修改個人資料</a></li>
+                        <li><a class="nav-link" href=@Url.Action("../Member/Book")>書籍</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- //header -->
+
+    </div>
+    <!-- //banner-text -->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href=@Url.Action("Index")>Home</a>
+        </li>
+        <li class="breadcrumb-item active">Contact</li>
+    </ol>
+    <!-- contact -->
+    <section class="banner-bottom-w3ls pt-lg-5 pt-md-3 pt-3">
+        <div class="inner-sec-wthreelayouts pt-md-5 pt-md-3 pt-3">
+            <h2 class="heading-agileinfo text-center  mb-4">聯絡 <span> 我們</span></h2>
+            <div class="container pt-sm-5">
+                <div class="address row mb-5">
+                    <div class="col-lg-4 address-grid-w3l">
+                        <div class="row address-info">
+                            <div class="col-3 address-left text-center">
+                                <i class="far fa-map"></i>
+                            </div>
+                            <div class="col-9 address-right text-left">
+                                <h6 class="ad-info text-uppercase mb-2">地址</h6>
+                                <p>
+                                    台灣-台中
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid-w3l">
+                        <div class="row address-info">
+                            <div class="col-3 address-left text-center">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="col-9 address-right text-left">
+                                <h6 class="ad-info text-uppercase mb-2">信箱</h6>
+                                <p>
+                                    信箱 :
+                                    <a href="mailto:example@email.com"> email@gmail.com</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid-w3l">
+                        <div class="row address-info">
+                            <div class="col-3 address-left text-center">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="col-9 address-right text-left">
+                                <h6 class="ad-info text-uppercase mb-2">電話</h6>
+                                <p>091234567</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="col-md-6 main_grid_contact">
+                        <div class="form">
+                            <h4 class="mb-4 text-left align-text-top">給我們發送訊息</h4>
+                            <tr>
+                                @(Html.ActionLink("前往留言板", "Index","Guestbook"))
+                            </tr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <CAPTION>
+    </CAPTION>
+    <br>
+
+    <!-- //contact -->
+    <!--/newsletter-->
+    <footer class="newsletter_right pymd-5 py-4" id="footer">
+        <div class="container">
+            <div class="inner-sec py-md-5 py-3">
+                <div class="row mb-md-4 mb-md-3">
+                    <div class="col-lg-3 col-md-6 social-info text-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">聯繫我們</h3>
+                        <p>0926k 4th block building,king Avenue, </p>
+                        <p class="my-2"> New York City,USA</p>
+                        <p class="phone">phone: +0444 555 6789</p>
+                        <p class="phone my-2">Fax: +0444 555 6789</p>
+                        <p class="phone">
+                            Mail:
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 social-info text-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">關於我們</h3>
+                        <p>
+                            【 開放時間 】
+                            <br />
+                            一樓 兒童室 週一至週日
+                            <br />
+                            08:30~17:00
+                            <br />
+                            四樓 圖書室 週二至週六
+                            <br />
+                            08:30~21:00
+                            <br />
+                            五樓 自修室 週一至週六　
+                            <br />
+                            08:30~21:00
+                            <br />
+                            【休館日】：國定假日、每個月
+                            <br />
+                            最後1個星期四(不含自修室)
+                        </p>
+
+                    </div>
+                    <div class="col-lg-6 col-md-12 n-right tex-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">訂閱我們的時事通訊</h3>
+                        <form action="#" method="post">
+                            <div class="form-group d-flex">
+                                <input class="form-control" type="email" name="Email" placeholder=" Email Address" required="">
+                                <input class="form-control submit text-uppercase" type="submit" value="Subscribe">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--<p class="copy-right mt-2">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>-->
+                </div>
+                <div class="col-md-4">
+                    <ul class="social-icons scial justify-content-end">
+                        <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//newsletter-->
+    <!-- js -->
+    <script src="../../Scripts/index.js"></script>
+    <script src="../../Scripts/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- start-smooth-scrolling -->
+    <script src="../../Scripts/move-top.js"></script>
+    <script src="../../Scripts/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="../../Scripts/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../Scripts/bootstrap.js"></script>
+</body>
+</html>

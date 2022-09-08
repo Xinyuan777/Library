@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://malsup.github.io/jquery.blockUI.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

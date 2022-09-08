@@ -1,0 +1,70 @@
+﻿@model onlinestore.Models.MessageData_Cs
+@{
+    Layout = null;
+    Html.EnableClientValidation();
+}
+<!DOCTyPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <h1 size="30">留言</h1>
+    @(Html.ValidationSummary())
+    @using (Html.BeginForm("CreateSave", "Guestbook"))
+    {
+
+        <p>
+            @(Html.Label("姓名"))
+        </p>
+        <p>
+            @(Html.TextBoxFor(x=>x.UserID_From_P))
+        </p>
+        <p>
+            @(Html.ValidationMessageFor(x=>x.UserID_From_P))
+        </p>
+
+        <p>
+            @(Html.Label("信箱"))
+        </p>
+        <p>
+            @(Html.TextBoxFor(x=>x.Email_P))
+        </p>
+        <p>
+            @(Html.ValidationMessageFor(x=>x.Email_P))
+        </p>
+        <p>
+            @(Html.Label("留言內容"))
+        </p>
+        <p>
+            @(Html.TextBoxFor(x=>x.Content_P))
+        </p>
+        <p>
+            @(Html.ValidationMessageFor(x=>x.Content_P))
+        </p>
+        <p>
+            @(Html.Label("是否需專人聯繫"))
+        </p>
+        <p>
+            @(Html.RadioButtonFor(x=>x.IsSecret_P,"True"))
+            <span>是:</span>
+            @(Html.RadioButtonFor(x=>x.IsSecret_P,"False"))
+            <span>否:</span>
+        </p>
+        <p>
+            @(Html.ValidationMessageFor(x=>x.IsSecret_P))
+        </p>
+        <p>
+            @(Html.Label("留言時間"))
+        </p>
+        <p>
+            @(Html.TextBoxFor(x=>x.JoinTime_P))
+        </p>
+        <p>
+            <input type="submit" value="送出" />
+        </p>
+    }
+</body>
+</html>

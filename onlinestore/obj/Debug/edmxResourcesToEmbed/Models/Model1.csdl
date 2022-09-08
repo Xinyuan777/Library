@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogDB2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActionLog_Tb">
+    <Key>
+      <PropertyRef Name="No_F" />
+    </Key>
+    <Property Name="No_F" Type="Int32" Nullable="false" />
+    <Property Name="UserID_F" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Action_F" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description_F" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RemoteIP_F" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="JoinTime_F" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email_F" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MemberData_Tb" Relationship="Self.FK_ActionLog_Tb_MemberData_Tb" FromRole="ActionLog_Tb" ToRole="MemberData_Tb" />
+  </EntityType>
+  <EntityType Name="MemberData_Tb">
+    <Key>
+      <PropertyRef Name="UserID_F" />
+    </Key>
+    <Property Name="No_F" Type="Int32" Nullable="false" />
+    <Property Name="UserID_F" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password_F" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName_F" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NickName_F" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email_F" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdmin_F" Type="Boolean" Nullable="false" />
+    <Property Name="Emotionlcon_F" Type="Int32" />
+    <Property Name="AuthCode_F" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Name="JoinTime_F" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ActionLog_Tb" Relationship="Self.FK_ActionLog_Tb_MemberData_Tb" FromRole="MemberData_Tb" ToRole="ActionLog_Tb" />
+    <NavigationProperty Name="MessageData_Tb" Relationship="Self.FK_MessageData_Tb_MemberData_Tb" FromRole="MemberData_Tb" ToRole="MessageData_Tb" />
+  </EntityType>
+  <EntityType Name="MessageData_Tb">
+    <Key>
+      <PropertyRef Name="No_F" />
+    </Key>
+    <Property Name="No_F" Type="Int32" Nullable="false" />
+    <Property Name="UserID_From_F" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content_F" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsSecret_F" Type="Boolean" Nullable="false" />
+    <Property Name="AdminReply_F" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdminReplyTime_F" Type="DateTime" Precision="3" />
+    <Property Name="JoinTime_F" Type="DateTime" Precision="3" />
+    <Property Name="Email_F" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MemberData_Tb" Relationship="Self.FK_MessageData_Tb_MemberData_Tb" FromRole="MessageData_Tb" ToRole="MemberData_Tb" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_ActionLog_Tb_MemberData_Tb">
+    <End Role="MemberData_Tb" Type="Self.MemberData_Tb" Multiplicity="1" />
+    <End Role="ActionLog_Tb" Type="Self.ActionLog_Tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberData_Tb">
+        <PropertyRef Name="UserID_F" />
+      </Principal>
+      <Dependent Role="ActionLog_Tb">
+        <PropertyRef Name="UserID_F" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageData_Tb_MemberData_Tb">
+    <End Role="MemberData_Tb" Type="Self.MemberData_Tb" Multiplicity="1" />
+    <End Role="MessageData_Tb" Type="Self.MessageData_Tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberData_Tb">
+        <PropertyRef Name="UserID_F" />
+      </Principal>
+      <Dependent Role="MessageData_Tb">
+        <PropertyRef Name="UserID_From_F" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlogDB2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActionLog_Tb" EntityType="Self.ActionLog_Tb" />
+    <EntitySet Name="MemberData_Tb" EntityType="Self.MemberData_Tb" />
+    <EntitySet Name="MessageData_Tb" EntityType="Self.MessageData_Tb" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_ActionLog_Tb_MemberData_Tb" Association="Self.FK_ActionLog_Tb_MemberData_Tb">
+      <End Role="MemberData_Tb" EntitySet="MemberData_Tb" />
+      <End Role="ActionLog_Tb" EntitySet="ActionLog_Tb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageData_Tb_MemberData_Tb" Association="Self.FK_MessageData_Tb_MemberData_Tb">
+      <End Role="MemberData_Tb" EntitySet="MemberData_Tb" />
+      <End Role="MessageData_Tb" EntitySet="MessageData_Tb" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

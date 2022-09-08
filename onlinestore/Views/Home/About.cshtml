@@ -1,0 +1,374 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="../../Content/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../../Content/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="../../Content/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100i,400,500,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+<body>
+    <!-- banner -->
+    <div class="inner-banner">
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
+                <h1>
+                    <a class="navbar-brand" href=@Url.Action("Index")>
+                        Library
+                        <span>Online Store</span>
+                    </a>
+                </h1>
+
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Index")>
+                                首頁
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active mx-xl-4 mx-lg-3 my-lg-0 my-3">
+                            <a class="nav-link" href=@Url.Action("About")>關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Contact")>聯絡我們</a>
+                        </li>
+                        <li> <a class="nav-link" href=@Url.Action("../Member/Register")>註冊</a></li>
+                        <li> <a class="nav-link" href=@Url.Action("../Member/Login")>登入</a></li>
+                        <li> <a class="nav-link" href=@Url.Action("../Member/Editprofile")>修改個人資料</a></li>
+                        <li> <a class="nav-link" href=@Url.Action("../Member/Book")>書籍頁面</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- //header -->
+
+    </div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href=@Url.Action("Index")>Home</a>
+        </li>
+        <li class="breadcrumb-item active">About</li>
+    </ol>
+    <!-- //banner-text -->
+    <section class="banner_bottom1 py-md-5">
+        <div class="container py-4 mt-2">
+            <h3 class="heading-agileinfo text-center">關於  <span>我們</span></h3>
+            <div class="inner_sec_info_wthree_agile mt-md-5 pt-3">
+                <div class="row help_full">
+                    <div class="col-lg-6 banner_bottom_grid help">
+                        <img src="../../images/g1.jpg" alt=" " class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 banner_bottom_left1">
+                        <h4>圖書館之蛻變</h4>
+                        <p>
+                            民國89年1月縣立文化中心改設成立文化局，並以任務編組成立臺北縣立圖書館籌備處。原考量圖書館乃社會教育機構，有關業務移由教育局主政，後因前瞻考量，圖書館業務於同年8月復移回文化局。
+                            <br />
+                            民國93年8月18日本府法規委員會審議通過「臺北縣立圖書館組織規程」，同年11月8日縣長發佈，並刊登臺北縣政府公報冬字第七期，自94年1月1日生效，同年1月2日舉行揭牌典禮。
+                        </p>
+                        <p>
+                            有鑒於服務及館藏空間之不足，自民國98年起著手籌建新北市立圖書館新總館，民國100年10月完成地上10層，地下3層之建築規劃，基地面積共6,137平方公尺。興建工程於民國101年9月17日假板橋區貴興路現址舉行開工典禮，民國104年5月10日完工啟用，成為全國首座24小時全天開放服務之公共圖書館。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- choose -->
+    <section class="choose py-5">
+        <div class="container py-md-4 mt-md-3">
+            <div class="row inner_w3l_agile_grids-1 ">
+                <div class="col-lg-6 w3layouts_choose_left_grid1">
+                    <div class="choose_top">
+                        <h4 class="mb-3 mt-3 text-white">常見問題</h4>
+                        <p class="text-white">依據本館閱覽服務規則，臨櫃服務於閉館前30分鐘後停止受理，館員在此30分鐘內需進行館舍巡查、整理環境、安全檢查、設備維護、結算規費、填寫工作日誌等相關作業，以提供翌日到館民眾舒適整潔的閱讀環境，相關規定已公告於本館官網與轄下各館館舍。</p>
+                        <a href="#" class="btn btn-primary mt-3" data-toggle="modal" data-target="#myModal">閱讀更多</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 w3layouts_choose_left_grid2">
+                    <div class="row">
+                        <div class="col-md-6 w3l_choose_bottom1 mt-3 pt-md-4">
+                            <div class="choose_bottom_top">
+                                <i class="fas fa-globe mb-2"></i>
+                                <h5 class="card-title text-uppercase my-3">可以使用其他APP產生的行動借閱證條碼借書嗎？</h5>
+                                <p class="card-text">
+                                    依據本館行動借閱證使用注意事項，本館所指有借閱效力之行動借閱證，僅限安裝於行動載具內之新北市政府所屬各機關具行動借閱證功能之APP，以轉讓、截圖或其他APP所產生之條碼，概不具借閱效力。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 w3l_choose_bottom2">
+                            <div class="choose_bottom_top">
+                                <i class="fas fa-book mb-2"></i>
+                                <h5 class="card-title text-uppercase my-3">請問如何查到新購CD、DVD等視聽資料？</h5>
+                                <p class="card-text">
+                                    因並非每月都有視聽資料上架，若於最近月份查無資料，請選擇其他月份再次查詢。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 w3l_choose_bottom3 mt-3 pt-md-4">
+                            <div class="choose_bottom_top">
+                                <i class="fas fa-graduation-cap mb-2"></i>
+                                <h5 class="card-title text-uppercase my-3">為何我照著網頁書籍封面預約，但沒有拿到想借的集數？</h5>
+                                <p class="card-text">
+                                    本館館藏查詢系統所提供書籍封面為系統自動抓取，若該筆書目為套書，系統會自套書內所有集數隨機抓取封面，故預約時仍請依據索書號內的冊次號（v.）挑選想借的集數，書籍封面僅供參考。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 w3l_choose_bottom4">
+                            <div class="choose_bottom_top">
+                                <i class="fas fa-globe mb-2"></i>
+                                <h5 class="card-title text-uppercase my-3">請問我可以用一卡通辦理借閱證嗎？</h5>
+                                <p class="card-text">
+                                    本館各閱覽單位受理讀者持新北市政府所屬各級機關及學校核發之新北兒童卡「一卡通」辦理借閱證，但非新北兒童卡之「一卡通」暫不開放辦證。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //choose -->
+    <!-- team -->
+    <section class="team py-md-5 py-4">
+        <div class="container py-lg-5">
+            <h2 class="heading-agileinfo text-center  mb-4">我們的 <span> 人員</span></h2>
+            <div class="row inner-sec-w3layouts-agileinfo pt-md-5">
+                <div class="col-md-3 col-sm-6 team-grids aos-init" data-aos="flip-left">
+                    <img src="../../images/t4.jpg" class="img-fluid" alt="">
+                    <div class="team-info">
+                        <div class="caption">
+                            <h4>徐子傑</h4>
+                            <h6>
+                                410719338
+                            </h6><h6>
+                            </h6>
+                        </div>
+                        <div class="social-icons-section">
+                            <a class="fac" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="twitter" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="pinterest" href="#">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 team-grids aos-init" data-aos="flip-right">
+                    <img src="../../images/t2.jpg" class="img-fluid" alt="">
+                    <div class="team-info">
+                        <div class="caption">
+                            <h4>李嘉陞</h4>
+                            <h6>410727789</h6>
+                        </div>
+                        <div class="social-icons-section">
+                            <a class="fac" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="twitter" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="pinterest" href="#">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 team-grids aos-init" data-aos="flip-left">
+                    <img src="../../images/t3.jpg" class="img-fluid" alt="">
+                    <div class="team-info">
+                        <div class="caption">
+                            <h4>Adam Lobster</h4>
+                            <h6>Lorem</h6>
+                        </div>
+                        <div class="social-icons-section">
+                            <a class="fac" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="twitter" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="pinterest" href="#">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 team-grids aos-init" data-aos="flip-right">
+                    <img src="../../images/t1.jpg" class="img-fluid" alt="">
+                    <div class="team-info">
+                        <div class="caption">
+                            <h4>Chris Woakes </h4>
+                            <h6>Lorem</h6>
+                        </div>
+                        <div class="social-icons-section">
+                            <a class="fac" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="twitter" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="pinterest" href="#">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //team -->
+    <!--/newsletter-->
+    <footer class="newsletter_right pymd-5 py-4" id="footer">
+        <div class="container">
+            <div class="inner-sec py-md-5 py-3">
+                <div class="row mb-md-4 mb-md-3">
+                    <div class="col-lg-3 col-md-6 social-info text-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">聯繫我們</h3>
+                        <p>0926k 4th block building,king Avenue, </p>
+                        <p class="my-2"> New York City,USA</p>
+                        <p class="phone">phone: +0444 555 6789</p>
+                        <p class="phone my-2">Fax: +0444 555 6789</p>
+                        <p class="phone">
+                            Mail:
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 social-info text-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">關於我們</h3>
+                        <p>
+                            【 開放時間 】
+                            <br />
+                            一樓 兒童室 週一至週日
+                            <br />
+                            08:30~17:00
+                            <br />
+                            四樓 圖書室 週二至週六
+                            <br />
+                            08:30~21:00
+                            <br />
+                            五樓 自修室 週一至週六　
+                            <br />
+                            08:30~21:00
+                            <br />
+                            【休館日】：國定假日、每個月
+                            <br />
+                            最後1個星期四(不含自修室)
+                        </p>
+
+                    </div>
+                    <div class="col-lg-6 col-md-12 n-right tex-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">訂閱我們的時事通訊</h3>
+                        <form action="#" method="post">
+                            <div class="form-group d-flex">
+                                <input class="form-control" type="email" name="Email" placeholder=" Email Address" required="">
+                                <input class="form-control submit text-uppercase" type="submit" value="Subscribe">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--<p class="copy-right mt-2">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>-->
+                </div>
+                <div class="col-md-4">
+                    <ul class="social-icons scial justify-content-end">
+                        <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//newsletter-->
+    <!-- js -->
+    <script src="../../Scripts/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- start-smooth-scrolling -->
+    <script src="../../Scripts/move-top.js"></script>
+    <script src="../../Scripts/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="../../Scripts/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../Scripts/bootstrap.js"></script>
+</body>
+</html>

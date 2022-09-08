@@ -1,0 +1,75 @@
+﻿@model onlinestore.Models.MessageData_Tb
+@{
+    Layout = null;
+    Html.EnableClientValidation();
+}
+<!DOCTyPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <h2>編輯留言</h2>
+    @(Html.ValidationSummary())
+    @using (Html.BeginForm("EditSave", "Guestbook"))
+    {
+        @(Html.ValidationSummary(true))
+<fieldset>
+    <legend>Message content</legend>
+
+    <div class="editor-labe1">
+        編號:
+    </div>
+    <div class="editor-field">
+        @(Html.TextBoxFor(model=>model.No_F))
+        @(Html.ValidationMessageFor(model => model.No_F))
+    </div>
+    <div class="editor-labe1">
+        姓名:
+    </div>
+    <div class="editor-field">
+        @(Html.TextBoxFor(model=>model.UserID_From_F))
+        @(Html.ValidationMessageFor(model => model.UserID_From_F))
+    </div>
+    <div class="editor-labe1">
+        信箱:
+    </div>
+    <div class="editor-field">
+        @(Html.TextBoxFor(model=>model.Email_F))
+        @(Html.ValidationMessageFor(model => model.Email_F))
+    </div>
+    <div class="editor-labe1">
+        留言內容:
+    </div>
+    <div class="editor-field">
+        @(Html.TextBoxFor(model=>model.Content_F))
+        @(Html.ValidationMessageFor(model => model.Content_F))
+    </div>
+    <div class="editor-labe1">
+        是否需要專人聯繫:
+    </div>
+    <div class="editor-field">
+        是:@(Html.RadioButtonFor(x=>x.IsSecret_F,"True"))
+        否:@(Html.RadioButtonFor(x=>x.IsSecret_F, "False"))
+        @(Html.ValidationMessageFor(model => model.IsSecret_F))
+    </div>
+    <div class="editor-labe1">
+        留言時間:
+    </div>
+    <div class="editor-field">
+        @(Html.TextBoxFor(model=>model.JoinTime_F))
+        @(Html.ValidationMessageFor(model => model.JoinTime_F))
+    </div>
+    <p>
+        <input type="submit" value="儲存" />
+    </p>
+</fieldset>
+    }
+    <div>
+        @Html.ActionLink("返回","Index")
+    </div>
+</body>
+</html>
+

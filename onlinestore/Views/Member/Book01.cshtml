@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>刺客正傳系列套書aaaa</title>
+    <link rel="stylesheet" href="~/css/Book01.css">
+</head>
+<body>
+    <section class="banner">
+        <header>
+            <a href="#" class="logo">刺客正傳系列套書</a>
+            <div class="toggle" onclick="toggle();"></div>
+        </header>
+        <div class="content">
+            <div class="contentBx">
+                <h2>
+                    「刺客正傳」的價值無可取代。
+                    <br>這是一部看完之後，絕對會想推薦給別人的作品。
+                </h2>
+                <p>
+                    作者羅蘋．荷布：「二十五年來，蜚滋從一個五歲的小屁孩，成長為一個刺客高手，再到歷經滄桑的六十歲男人。朋友、伙伴來來去去，他經歷過困苦和孤寂，享受過安詳和滿足。一本接著一本書，我和讀者一直陪伴著他……衷心感激你，在心靈騰出一個空間，給了我的人物角色一個家。」
+
+                    奇幻大師喬治．馬汀盛讚：「羅蘋．荷布的書是海洋中的鑽石。」
+
+                    亞馬遜網站讀者：「讀完這本書，我整個人筋疲力盡。我無法詳盡解釋自己的情緒；悲傷、絕望、憤怒、驕傲......這部作品我已經讀了三次，我真的很高興能藉由本書，認識羅蘋．荷布。」
+                </p>
+                @*<a href="#">借閱</a>*@
+                <form action="/Borrow/DoBorrow" method="post">
+                    <input type="hidden" name="Name" value="刺客正傳系列套書" />
+                    <input type="submit" value="借閱">
+                </form>
+            </div>
+            <div class="imgBx">
+                <img src="../images/book04.png">
+            </div>
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="../images/facebook.png"></a></li>
+            <li><a href="#"><img src="../images/twitter.png"></a></li>
+            <li><a href="#"><img src="../images/instagram.png"></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="@Url.Action("Book0101")">搶先看</a></li>
+            <li><a href="@Url.Action("Book0102")">來這評論</a></li>
+            <li><a href="@Url.Action("Book0103")">看看大家怎麼說</a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function toggle() {
+            const toggle = document.querySelector('.toggle');
+            const banner = document.querySelector('.banner');
+            toggle.classList.toggle('active');
+            banner.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

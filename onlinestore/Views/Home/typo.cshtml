@@ -1,0 +1,422 @@
+﻿@{
+    ViewBag.Title = "typo";
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Typography</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="../../Content/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../../Content/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="../../Content/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100i,400,500,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+<body>
+    <!-- banner -->
+    <div class="inner-banner">
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
+                <h1>
+                    <a class="navbar-brand" href=@Url.Action("Index")>
+                        Subject
+                        <span>Education</span>
+                    </a>
+                </h1>
+
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Index")>
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-xl-4 mx-lg-3 my-lg-0 my-3">
+                            <a class="nav-link" href=@Url.Action("About")>About Us</a>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href=@Url.Action("services")>Services</a>
+                                <a class="dropdown-item" href=@Url.Action("typo")>Typography</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href=@Url.Action("gallery")>Gallery</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Contact")>Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- //header -->
+
+    </div>
+    <!-- //banner-text -->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href=@Url.Action("Index")>Home</a>
+        </li>
+        <li class="breadcrumb-item active">Typography</li>
+    </ol>
+
+    <!-- typography -->
+    <section class="wthree-row pt-sm-3  pb-sm-5 pb-3">
+        <div class="container py-sm-5 py-3">
+            <!-- section title -->
+            <h2 class="heading-agileinfo">Typo<span>graphy</span></h2>
+            <!-- //section title -->
+            <div class="pb-5 mt-md-5 typo-wthree">
+                <h4 class="pt-4 pb-3">Flex</h4>
+                <div class="d-flex p-2 bg-flex mb-1">I'm a flexbox container!</div>
+                <div class="d-inline-flex p-2 bg-flex mb-1">I'm an inline flexbox container!</div>
+                <h5 class="pt-4 pb-3">Flex row</h5>
+                <div class="d-flex flex-row bg-flex">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Flex row-reverse</h5>
+                <div class="d-flex flex-row-reverse bg-flex">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Flex column</h5>
+                <div class="d-flex flex-column bg-flex">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Flex column-reverse</h5>
+                <div class="d-flex flex-column-reverse bg-flex">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h4 class="pt-5 pb-3">Justify Content</h4>
+                <h5 class="pt-4 pb-3">Justify Content Start</h5>
+                <div class="d-flex justify-content-start bg-flex mb-3">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Justify Content End</h5>
+                <div class="d-flex justify-content-end bg-flex mb-3">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Justify Content Center</h5>
+                <div class="d-flex justify-content-center bg-flex mb-3">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Justify Content Between</h5>
+                <div class="d-flex justify-content-between bg-flex mb-3">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h5 class="pt-4 pb-3">Justify Content Around</h5>
+                <div class="d-flex justify-content-around bg-flex mb-3">
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 1</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 2</div>
+                    <div class="p-2 bg-flex mb-1 bg-flex-item">Flex item 3</div>
+                </div>
+                <h4 class="pt-4 pb-3"> Align items</h4>
+                <h5 class="pt-4 pb-3">Align Items Start</h5>
+
+                <div class="d-flex align-items-start  bg-flex mb-3" style="height: 100px">
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                </div>
+                <h5 class="pt-4 pb-3">Align Items End</h5>
+
+                <div class="d-flex align-items-end  bg-flex mb-3" style="height: 100px">
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                </div>
+                <h5 class="pt-4 pb-3">Align Items Center</h5>
+
+                <div class="d-flex align-items-center  bg-flex mb-3" style="height: 100px">
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                </div>
+                <h5 class="pt-4 pb-3">Align Items Baseline</h5>
+
+                <div class="d-flex align-items-baseline  bg-flex mb-3" style="height: 100px">
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                </div>
+                <h5 class="pt-4 pb-3">Align Items Strech</h5>
+
+                <div class="d-flex align-items-stretch  bg-flex" style="height: 100px">
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                    <div class="p-2  bg-flex-item">Flex item</div>
+                </div>
+                <h4 class="mt-5 mb-3">Lists</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="pt-4 pb-3">List Group</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="pt-4 pb-3">Active items</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item active">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <h5 class="pt-4 pb-3">Disabled items</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item disabled">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <h5 class="pt-4 pb-3">Flush</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="pt-4 pb-3">Contextual Classes</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item list-group-item-primary">This is a primary list group item</li>
+                            <li class="list-group-item list-group-item-secondary">This is a secondary list group item</li>
+                            <li class="list-group-item list-group-item-success">This is a success list group item</li>
+                            <li class="list-group-item list-group-item-danger">This is a danger list group item</li>
+                            <li class="list-group-item list-group-item-warning">This is a warning list group item</li>
+                            <li class="list-group-item list-group-item-info">This is a info list group item</li>
+                            <li class="list-group-item list-group-item-light">This is a light list group item</li>
+                            <li class="list-group-item list-group-item-dark">This is a dark list group item</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-4">
+                        <h5 class="pt-4 pb-3">With Badges</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Cras justo odio
+                                <span class="badge badge-primary badge-pill">14</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Dapibus ac facilisis in
+                                <span class="badge badge-primary badge-pill">2</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Morbi leo risus
+                                <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h4 class="pt-4 pb-3 mt-sm-5 mt-3">Color</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="my-4">Text color</h5>
+                        <p class="text-primary mb-2">.text-primary</p>
+                        <p class="text-secondary mb-2">.text-secondary</p>
+                        <p class="text-success mb-2">.text-success</p>
+                        <p class="text-danger mb-2">.text-danger</p>
+                        <p class="text-warning mb-2">.text-warning</p>
+                        <p class="text-info mb-2">.text-info</p>
+                        <p class="text-light bg-dark mb-2">.text-light</p>
+                        <p class="text-dark mb-2">.text-dark</p>
+                        <p class="text-muted mb-2">.text-muted</p>
+                        <p class="text-white bg-dark">.text-white</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="my-4">Anchors with the provided hover and focus states.</h5>
+                        <p>
+                            <a href="#" class="text-primary">Primary link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-secondary">Secondary link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-success">Success link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-danger">Danger link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-warning">Warning link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-info">Info link</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-light bg-dark">Light link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-dark">Dark link</a>
+                        </p>
+                        <p class="mb-2">
+                            <a href="#" class="text-muted">Muted link</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-white bg-dark">White link</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //typo container -->
+    </section>
+    <!-- //typography -->
+    <!--/newsletter-->
+    <footer class="newsletter_right pymd-5 py-4" id="footer">
+        <div class="container">
+            <div class="inner-sec py-md-5 py-3">
+                <div class="row mb-md-4 mb-md-3">
+                    <div class="col-lg-3 col-md-6 social-info text-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">Get in touch</h3>
+                        <p>0926k 4th block building,king Avenue, </p>
+                        <p class="my-2"> New York City,USA</p>
+                        <p class="phone">phone: +0444 555 6789</p>
+                        <p class="phone my-2">Fax: +0444 555 6789</p>
+                        <p class="phone">
+                            Mail:
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 social-info text-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">About Us</h3>
+                        <p>
+                            Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at tellus.
+                            Nulla porttitor accumsana tincidunt. Vestibulum ante ipsum primis tempus convallis.
+                        </p>
+
+                    </div>
+                    <div class="col-lg-6 col-md-12 n-right tex-left">
+                        <h3 class="tittle1 foot mb-md-5 mb-4 text-white">Subscribe our Newsletter</h3>
+                        <form action="#" method="post">
+                            <div class="form-group d-flex">
+                                <input class="form-control" type="email" name="Email" placeholder=" Email Address" required="">
+                                <input class="form-control submit text-uppercase" type="submit" value="Subscribe">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="copy-right mt-2">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="social-icons scial justify-content-end">
+                        <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                        <li class="mx-1"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//newsletter-->
+    <!-- js -->
+    <script src="../../Scripts/index.js"></script>
+    <script src="../../Scripts/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- start-smooth-scrolling -->
+    <script src="../../Scripts/move-top.js"></script>
+    <script src="../../Scripts/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="../../Scripts/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../Scripts/bootstrap.js"></script>
+</body>
+</html>
